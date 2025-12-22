@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IntelliStream Design System - Executive Data Platform
+All colors MUST be HSL. Dark theme with blue-teal gradient accents.
+*/
+
+@layer base {
+  :root {
+    /* Light theme (fallback) */
+    --background: 220 14% 96%;
+    --foreground: 220 9% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 9% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 9% 11%;
+    --primary: 201 96% 32%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 220 9% 11%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 92%;
+    --accent-foreground: 220 9% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 201 96% 32%;
+    --radius: 0.75rem;
+
+    /* Custom IntelliStream tokens */
+    --intellistream-primary: 201 96% 32%;
+    --intellistream-secondary: 158 64% 52%;
+    --intellistream-accent: 195 100% 50%;
+    --gradient-primary: linear-gradient(135deg, hsl(201 96% 32%) 0%, hsl(158 64% 52%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(220 26% 10%) 0%, hsl(220 20% 14%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(220 20% 12%) 0%, hsl(220 16% 16%) 100%);
+    --shadow-glow: 0 4px 20px hsl(201 96% 32% / 0.15);
+    --shadow-card: 0 4px 16px hsl(220 26% 6% / 0.3);
+    --animation-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* Dark theme - primary for IntelliStream */
+    --background: 220 26% 8%;
+    --foreground: 210 40% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 16% 16%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 201 96% 32%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 16% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 16% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 220 16% 24%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 16% 20%;
+    --input: 220 16% 20%;
+    --ring: 201 96% 32%;
+
+    /* Sidebar tokens for dark theme */
+    --sidebar-background: 220 26% 10%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 201 96% 32%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 220 20% 16%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 220 16% 20%;
+    --sidebar-ring: 201 96% 32%;
+
+    /* Enhanced shadows for dark theme */
+    --shadow-glow: 0 4px 24px hsl(201 96% 32% / 0.25);
+    --shadow-card: 0 8px 24px hsl(220 26% 4% / 0.4);
+  }
+
+  /* Status color system */
+  .status-healthy {
+    @apply text-emerald-400 bg-emerald-500/10 border-emerald-500/20;
+  }
+
+  .status-warning {
+    @apply text-amber-400 bg-amber-500/10 border-amber-500/20;
+  }
+
+  .status-critical {
+    @apply text-red-400 bg-red-500/10 border-red-500/20;
+  }
+
+  .status-info {
+    @apply text-blue-400 bg-blue-500/10 border-blue-500/20;
+  }
+
+  /* Trust score colors */
+  .trust-high {
+    @apply text-emerald-400;
+  }
+
+  .trust-medium {
+    @apply text-amber-400;
+  }
+
+  .trust-low {
+    @apply text-red-400;
+  }
+
+  /* Gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Animation classes */
+  .animate-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-smooth {
+    transition: var(--animation-smooth);
+  }
+
+  .animate-bounce-in {
+    transition: var(--animation-bounce);
+  }
+
+  /* Autofill override for dark mode */
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover,
+  .dark input:-webkit-autofill:focus,
+  .dark input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
