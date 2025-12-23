@@ -8,6 +8,8 @@ import {
   Shield,
   Settings,
   ChevronRight,
+  CheckSquare,
+  Activity,
 } from "lucide-react";
 
 import {
@@ -25,8 +27,9 @@ import {
 const navigationItems = [
   { title: "Overview", url: "/dashboard", icon: LayoutDashboard },
   { title: "Executive Cockpit", url: "/executive", icon: TrendingUp },
-  { title: "Datasets", url: "/datasets", icon: Database },
-  { title: "Sandbox", url: "/explainability", icon: Brain },
+  { title: "Data Assets", url: "/datasets", icon: Database },
+  { title: "Monitoring", url: "/monitoring", icon: Activity },
+  { title: "Approvals", url: "/approvals", icon: CheckSquare },
 ];
 
 export function AppSidebar({ className, ...props }: React.ComponentProps<typeof Sidebar>) {

@@ -8,6 +8,8 @@ import Overview from "@/pages/Overview";
 import ExecutiveCockpit from "./pages/ExecutiveCockpit";
 import Datasets from "./pages/Datasets";
 import DatasetReport from "./pages/DatasetReport";
+import Approvals from "./pages/Approvals";
+import Monitoring from "./pages/Monitoring";
 import Explainability from "./pages/Explainability";
 import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/LandingPage";
@@ -37,6 +39,8 @@ const App = () => (
                   <Route path="/executive" element={<ExecutiveCockpit />} />
                   <Route path="/datasets" element={<Datasets />} />
                   <Route path="/dataset/:domain/:schema/:dataset" element={<DatasetReport />} />
+                  <Route path="/approvals" element={<Approvals />} />
+                  <Route path="/monitoring" element={<Monitoring />} />
                   <Route path="/explainability" element={<Explainability />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
